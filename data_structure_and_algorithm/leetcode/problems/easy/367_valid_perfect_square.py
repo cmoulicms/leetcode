@@ -5,18 +5,35 @@
 # A perfect square is an integer that is the square of an integer. In other words, it is the product of some integer with itself.
 
 # You must not use any built-in library function, such as sqrt.
-num = 1
+num = 9
 
 
 class Solution:
 
     def isPerfectSquare(self, num: int) -> bool:
-        n = num // 2
+        # Time Limit Exceeded when num = 2000105819 for below code.
+        # n = num // 2
+        # if num == 1:
+        #     return True
+        # for i in range(0, n):
+        #     if i ** 2 == num:
+        #         return True
+        # return False
+
+        # binary search method
+        left = 0
+        right = num // 2
         if num == 1:
             return True
-        for i in range(0, n):
-            if i ** 2 == num:
+        while left <= right:
+            mid = (left + right) // 2
+
+            if num == mid ** 2:
                 return True
+            elif num > mid ** 2:
+                left = mid + 1
+            else:
+                right = mid -1
         return False
 
 

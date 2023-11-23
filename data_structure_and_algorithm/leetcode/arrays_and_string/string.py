@@ -14,10 +14,10 @@ print(str)
 # 3. Extra operations
 # concatenate
 # find
-print(str.index("H"))
+# print(str.index("H"))
 
 # substring
-print(str[:4])
+# print(str[:4])
 
 # Immutable String: Problems and Solutions
 s = ""
